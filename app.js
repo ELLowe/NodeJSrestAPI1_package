@@ -7,10 +7,12 @@ const port = 3000;
 //  as well as the traditional explicit app.route('/blah').get(function(req,res)){res.send("Message");} :
 
 // app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
-app.use('/public', express.static('public'));
+app.use('/', express.static('public'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
+
+// FUNNIES :)
 app.route('/starwars').get(function(req,res)
 {
     res.send("Star Wars fans unite!");
@@ -19,8 +21,3 @@ app.route('/startrek').get(function(req,res)
 {
     res.send("Star Trek Takeover!!!");
 });
-
-// app.route('/', function(req,res)
-// {
-//     res.send('Welcome to Node.JS discovery routes.');
-// }));
